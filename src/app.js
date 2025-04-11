@@ -71,7 +71,7 @@ const swaggerOptions = {
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
-app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Root route for basic info
 /**
@@ -102,13 +102,7 @@ app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
  *                   type: string
  */
 app.get('/', (req, res) => {
-  res.json({
-    name: "Iceland Pools API",
-    description: "REST API for swimming pools in Iceland",
-    documentation: "/api",
-    healthCheck: "/api/health",
-    repository: "https://github.com/Lavardur/iceland-pools-api"
-  });
+  res.redirect('/api/docs');
 });
 
 
