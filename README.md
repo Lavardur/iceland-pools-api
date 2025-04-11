@@ -4,7 +4,7 @@ A website and REST API for reviewing/swimming pools in Iceland, featuring rating
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=)
-[![API Status](https://img.shields.io/endpoint?url=https://your-api.up.railway.app/api/health)]()
+[![API Status](https://img.shields.io/endpoint?url=https://iceland-pools-api-production.up.railway.app/api/health)]()
 
 ## Features
 - **Pool Listings**: Name, location (GPS), entry fees, facilities
