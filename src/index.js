@@ -2,13 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const Pool = require('./models/Pool');
+
+// Import models
+const { Pool, Facility, User, Review, sequelize } = require('./models/index');
 
 app.use(cors());
 app.use(express.json());
 
 // Connect to PostgreSQL via Sequelize
-const sequelize = require('./config/database');
 sequelize.sync() // Creates tables if they don't exist
   .then(() => console.log('Database connected'))
   .catch(err => console.error('Unable to connect to database:', err));
@@ -16,8 +17,37 @@ sequelize.sync() // Creates tables if they don't exist
 // Define routes
 app.get('/api/pools', async (req, res) => {
   try {
-    const pools = await Pool.findAll();
+    const pools = await Pool.findAll({
+      include: [Facility]
+    });
     res.json(pools);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/pools/:id', async (req, res) => {
+  try {
+    const pool = await Pool.findByPk(req.params.id, {
+      include: [
+        Facility,
+        {
+          model: Review,
+          include: [
+            {
+              model: User,
+              attributes: ['username'] // Only show the username, not password or email
+            }
+          ]
+        }
+      ]
+    });
+    
+    if (!pool) {
+      return res.status(404).json({ error: 'Pool not found' });
+    }
+    
+    res.json(pool);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
