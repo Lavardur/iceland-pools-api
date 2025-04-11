@@ -3,7 +3,8 @@ const sequelize = require('../config/database');
 
 const Pool = sequelize.define('Pool', {
   name: { type: DataTypes.STRING, allowNull: false },
-  location: { type: DataTypes.GEOGRAPHY('POINT') },
+  latitude: { type: DataTypes.FLOAT },
+  longitude: { type: DataTypes.FLOAT },
   entry_fee: { type: DataTypes.INTEGER },
 });
 
