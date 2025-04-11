@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { User } = require('../models/index');
+const { User, Sequelize } = require('../models/index');
 const { authLimit } = require('../middleware/rateLimit');
 const { body, validationResult } = require('express-validator');
 

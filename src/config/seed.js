@@ -109,7 +109,6 @@ async function seedDatabase() {
         password_hash: hashedPassword,
         is_admin: user.is_admin
       }));
-      console.log(`Added user: ${user.username}`);
     }
     
     // Insert pools and facilities
@@ -122,7 +121,6 @@ async function seedDatabase() {
         pool_id: newPool.id
       });
       pools.push(newPool);
-      console.log(`Added pool: ${pool.name} with facilities`);
     }
     
     // Insert reviews
@@ -138,7 +136,6 @@ async function seedDatabase() {
           comment: review.comment,
           visit_date: review.visit_date
         });
-        console.log(`Added review for ${review.poolName} by ${review.username}`);
       }
     }
     

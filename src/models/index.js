@@ -1,4 +1,5 @@
 const sequelize = require('../config/database');
+const { Sequelize } = require('sequelize');
 const Pool = require('./Pool');
 const Facility = require('./Facility');
 const User = require('./User');
@@ -33,6 +34,7 @@ Review.belongsTo(User, {
 
 module.exports = {
   sequelize,
+  Sequelize,
   Pool,
   Facility,
   User,
