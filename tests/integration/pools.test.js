@@ -208,7 +208,7 @@ describe('Pool API Integration', () => {
     // Add a review first
     await Review.create({
       pool_id: testPool.id,
-      user_id: testUser.id,
+      user_id: testUserPools.id,
       rating: 4,
       comment: 'Good facilities but a bit crowded',
       visit_date: '2023-05-20'
@@ -220,7 +220,7 @@ describe('Pool API Integration', () => {
     expect(Array.isArray(response.body)).toBe(true);
     expect(response.body.length).toBe(1);
     expect(response.body[0].rating).toBe(4);
-    expect(response.body[0].User.username).toBe('testuser');
+    expect(response.body[0].User.username).toBe('testpoolsuser');
   });
   
   // Health check endpoint

@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const { User, Sequelize } = require('../models/index');
 const { authLimit } = require('../middleware/rateLimit');
 const { body, validationResult } = require('express-validator');
+const { validateUser } = require('../middleware/validators');
 
 // Apply stricter rate limiting to auth routes
 router.use(authLimit);
@@ -48,7 +49,7 @@ router.post('/login', validateLogin, async (req, res) => {
         username: user.username,
         isAdmin: user.is_admin 
       },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'test-secret-key',
       { expiresIn: '24h' }
     );
     
@@ -62,13 +63,12 @@ router.post('/login', validateLogin, async (req, res) => {
       }
     });
   } catch (error) {
+    console.error('Login error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
 
-// Registration with validators imported from middleware/validators.js
-const { validateUser } = require('../middleware/validators');
-
+// Registration route
 router.post('/register', validateUser, async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -108,6 +108,7 @@ router.post('/register', validateUser, async (req, res) => {
       }
     });
   } catch (error) {
+    console.error('Registration error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
