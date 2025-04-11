@@ -1,0 +1,11 @@
+{
+    "build": {
+      "builder": "NIXPACKS",
+      "config": {}
+    },
+    "deploy": {
+      "startCommand": "node index.js",
+      "healthcheckPath": "/api/health",
+      "restartPolicy": "always"
+    }
+  }
