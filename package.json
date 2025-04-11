@@ -1,0 +1,14 @@
+{
+  "name": "iceland-pools-api",
+  "version": "1.0.0",
+  "description": "REST API for swimming pools in iceland",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anton Benediktsson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
