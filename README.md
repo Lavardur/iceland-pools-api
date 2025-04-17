@@ -1,10 +1,6 @@
-# Iceland Swimming Pool Reviews 🏊♂️❄️
+# Iceland Swimming Pool Reviews 🏊❄️
 
 A website and REST API for reviewing/swimming pools in Iceland, featuring ratings, statistics, and crowdsourced data.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=)
-[![API Status](https://img.shields.io/endpoint?url=https://iceland-pools-api-production.up.railway.app/api/health)]()
 
 ## Features
 - **Pool Listings**: Name, location (GPS), entry fees, facilities
@@ -90,23 +86,3 @@ curl -X POST https://your-api.up.railway.app/api/reviews \
 
 4. **Access live API**  
    Your API will be available at `https://project-name.up.railway.app`
-
-## Contributing
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/foo`)
-3. Commit changes (`git commit -am 'Add foo'`)
-4. Push to branch (`git push origin feature/foo`)
-5. Open a Pull Request
-
-## License
-MIT License - see [LICENSE](LICENSE)
-
-## Contact
-Your Name - your.email@example.com  
-Project Link: [https://github.com/your-username/iceland-pools]()
-
----
-
-**Acknowledgments**  
-- Data sources: Visit Reykjavík, Sundlaugar.is  
-- Hot spring photography: [Icelandic Tourism Board]()
