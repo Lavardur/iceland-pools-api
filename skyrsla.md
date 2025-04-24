@@ -2,7 +2,7 @@
 
 ## Inngangur
 
-Þetta verkefni fól í sér að búa til alhliða REST API fyrir upplýsingar um sundlaugar á Íslandi. Vefþjónustan gerir notendum kleift að nálgast gögn um ýmsar sundlaugar, þar á meðal staðsetningu þeirra, aðstöðu og umsagnir notenda. Notendur geta einnig búið til aðgang, skrifað umsagnir og gefið einkunn til sundlauga. Næsta verkefni er að búa til framenda sem nýtir vefþjónustuna sem sumarverkefni til að gera til skemmtunar.
+Þetta verkefni fól í sér að búa til alhliða REST API fyrir upplýsingar um sundlaugar á Íslandi. Vefþjónustan gerir notendum kleift að nálgast gögn um ýmsar sundlaugar, þar á meðal staðsetningu þeirra, aðstöðu og umsagnir notenda. Notendur geta einnig búið til aðgang, skrifað umsagnir og gefið einkunn til sundlauga. Ef ég myndi halda áfram með þetta verkefni þá myndi ég bæta við endursetningu á lykilorði, ég myndi gera það hægt að sía út gögn til að auðvelda notkun vefþjónustunnar og að lokum myndi ég vilja búa til framendann.
 
 ## Matskvarði fyrir verkefnið er:
 
@@ -11,6 +11,11 @@
 - 20% Einingaprófanir á foo og bar.
 - 20% Samþættingarprófanir (integration test) á foo og bar.
 - 20% Vefþjónusta sett upp í hýsingu.
+
+Með því að keyra öll test er hægt að staðfesta alla virkni. Annars er líka hægt að prófa endapunktanna með swagger skjöluninni.
+Til að nota admin account: 
+- email: 'admin@example.com',
+- password: 'adminPassword123' 
 
 ## Útfærsla
 
