@@ -14,8 +14,6 @@
 
 ## Útfærsla
 
-Vefþjónustan var útfærð með eftirfarandi lykileiginleikum:
-
 ### Gagnalíkön og tengsl
 - **Sundlaugar**: Grunnupplýsingar um sundlaugar (nafn, staðsetning, gjöld o.s.frv.)
 - **Aðstaða**: Aðstaða sem er í boði í hverri laug (heitir pottar, gufuböð, rennibrautir o.s.frv.)
@@ -23,7 +21,6 @@ Vefþjónustan var útfærð með eftirfarandi lykileiginleikum:
 - **Notendur**: Notendareikningar með auðkenningu og heimildum
 
 ### Endapunktar
-Vefþjónustan býður upp á nokkra endapunkta sem eru skipulagðir eftir tegund:
 
 **Endapunktar fyrir sundlaugar:**
 - `GET /api/pools`: Sækja allar sundlaugar með aðstöðu þeirra
@@ -60,8 +57,6 @@ Vefþjónustan býður upp á nokkra endapunkta sem eru skipulagðir eftir tegun
 
 ## Tækni
 
-Verkefnið var útfært með eftirfarandi tækni:
-
 **Bakendi:**
 - Node.js með Express.js
 
@@ -88,48 +83,28 @@ Verkefnið var útfært með eftirfarandi tækni:
 - swagger-jsdoc fyrir að búa til OpenAPI forskriftir
 
 **Útgáfa:**
-- Railway fyrir hýsingu
-- Stjórnun umhverfisbreyta
-- Heilsutékk endapunktar fyrir eftirlit
+- Railway fyrir hýsingu gagnagrunns og vefþjónustu
 
 ## Hvað gekk vel
 
-Nokkrir þættir verkefnisins gengu sérstaklega vel:
+1. **Gagnalíkanagerð**: Tengsl milli sundlauga, aðstöðu, umsagna og notenda voru útfærð á hreinan hátt og engin vandamál áttu sér stað.
 
-1. **Gagnalíkanagerð**: Tengsl milli sundlauga, aðstöðu, umsagna og notenda voru útfærð á hreinan hátt með viðeigandi takmörkunum á erlendum lyklum og keðjuðum eyðingum.
+2. **Prófanir**: Eininga- og samþættingarprófanir veita framúrskarandi umfjöllun um virkni API-iðs. Alheimsuppsetning og niðurrif tryggja að hver prófun keyri með hreinu gagnagrunnsástandi.
 
-2. **Auðkenningarkerfi**: JWT auðkenningarkerfið veitir öruggan aðgang að vernduðum endapunktum á sama tíma og það viðheldur góðri notendaupplifun.
+3. **Skjölun**: Swagger skjölunin veitir yfirgripsmikla og gagnvirka leið fyrir notendur til að skilja og prófa Vefþjónustuna og það var mjög auðvelt að setja það upp.
 
-3. **Prófanir**: Eininga- og samþættingarprófanir veita framúrskarandi umfjöllun um virkni API-iðs. Alheimsuppsetning og niðurrif tryggja að hver prófun keyri með hreinu gagnagrunnsástandi.
-
-4. **Skjölun**: Swagger skjölunin veitir yfirgripsmikla og gagnvirka leið fyrir notendur til að skilja og prófa API-ið.
-
-5. **Staðfesting**: Staðfesting inntaks er ítarleg og veitir merkingarbær skilaboð til viðskiptavina.
-
-6. **Útgáfa**: API-ið er sett upp á Railway með viðeigandi umhverfisstillingum og eftirliti með heilsu.
+4. **Útgáfa**: Vefþjónustan og gagnagrunnurinn var auðveldlega settur upp og það var létt að tengja þá saman þar sem þeir geta talað saman locally í Railway umhverfinu.
 
 ## Hvað gekk illa
 
-Það komu upp nokkrar áskoranir í þróuninni:
-
 1. **Uppsetning prófunargagnagrunns**: Upphaflega voru vandamál með uppsetningu prófunargagnagrunns, sérstaklega með tvíteknar töflur sem ollu takmörkunarbrotum. Þetta var leyst með því að útfæra rétta samstillingu gagnagrunns með `force: true` og bæta prófunararkitektúrinn.
 
-2. **Auðkenningartilvik**: Að meðhöndla jaðartilvik í auðkenningu, eins og útrunnin token eða rangar beiðnir, krafðist viðbótarvillumeðhöndlunar og prófana.
-
-3. **Sequelize tengsl**: Að fá keðjuð tengsl rétt milli líkana tók nokkrar tilraunir, sérstaklega fyrir eyðingu gagna með takmörkunum á erlendum lyklum.
-
-4. **Umhverfisstillingar**: Að stjórna mismunandi umhverfisstillingum (þróun, prófun, framleiðsla) krafðist vandvirkrar uppsetningar og villuleitar.
-
-5. **Takmörkun á beiðnum**: Að finna rétta jafnvægi fyrir takmörkun á beiðnum sem kemur í veg fyrir misnotkun án þess að hindra lögmæta notendur var áskorun.
+2. **Umhverfisstillingar**: Að stjórna mismunandi umhverfisstillingum (þróun, prófun, framleiðsla) tók nokkrar tilraunir.
 
 ## Hvað var áhugavert
 
 Nokkrir þættir verkefnisins voru sérstaklega áhugaverðir:
 
-1. **Öryggismynstur fyrir API**: Að útfæra réttar öryggisvenjur eins og JWT auðkenningu, dulkóðun lykilorða og aðgangsstýringu byggða á hlutverkum veitti dýrmæta innsýn í örugga hönnun API.
+1. **Prófunaraðferðir**: Aðgreiningin á milli einingarprófana (með hermdum háðum einingum) og samþættingarprófana (með raunverulegum gagnagrunnsaðgerðum) sýndi mismunandi prófunaraðferðir og kosti þeirra.
 
-2. **Prófunaraðferðir**: Aðgreiningin á milli einingarprófana (með hermdum háðum einingum) og samþættingarprófana (með raunverulegum gagnagrunnsaðgerðum) sýndi mismunandi prófunaraðferðir og kosti þeirra.
-
-3. **Swagger skjölun**: Að búa til gagnvirka API skjölun úr athugasemdum í kóða var glæsileg lausn sem tryggir að skjölun haldist í samræmi við útfærslu.
-
-Í heildina veitti þetta verkefni yfirgripsmikla reynslu í hönnun, útfærslu, prófun og útgáfu á nútíma REST API með auðkenningu, sem er dýrmæt þekking fyrir framtíðarvefþróunarverkefni.
+2. **Swagger skjölun**: Að búa til gagnvirka API skjölun úr athugasemdum í kóða var glæsileg lausn sem tryggir að skjölun haldist í samræmi við útfærslu.
