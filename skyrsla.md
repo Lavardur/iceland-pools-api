@@ -12,11 +12,11 @@
 - 20% Samþættingarprófanir (integration test) á foo og bar.
 - 20% Vefþjónusta sett upp í hýsingu.
 
-Með því að keyra öll test er hægt að staðfesta alla virkni. Annars er líka hægt að prófa endapunktanna með swagger skjöluninni.
+Með því að keyra öll test með `npm run test` er hægt að staðfesta alla virkni gegnum Eininga og Samþættingarprófanir. Annars er líka hægt að prófa endapunktanna með swagger skjöluninni.
 Til að nota admin account: 
-- email: 'admin@example.com',
-- password: 'adminPassword123' 
-
+-  "email": "admin@example.com",
+-  "password": "adminPassword123"
+Þegar þú loggar inn í gegnum Swagger færðu token sem þú getur notað til að prófa vernduðu endapunktanna
 ## Útfærsla
 
 ### Gagnalíkön og tengsl
